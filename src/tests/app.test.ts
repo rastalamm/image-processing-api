@@ -1,5 +1,5 @@
-import request from "supertest"
-import app from "../app"
+import request from "supertest";
+import app from "../app";
 
 describe("Server Endpoint", () => {
   it("returns a 200 if endpoint exists and sends a file", (done) => {
