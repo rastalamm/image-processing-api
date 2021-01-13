@@ -1,5 +1,5 @@
 import path from "path";
-å
+
 export const PORT = 3000;
 export const DEFAULT_HEIGHT = "200";
 export const DEFAULT_WIDTH = "200";
@@ -14,6 +14,6 @@ export const IMAGES = [
   "santamonica",
 ];
 
-export const DEFAULT_IMAGE = IMAGES[0]
+export const DEFAULT_IMAGE = IMAGES[0];
 
 export const IMAGE_SOURCE_PATH = path.resolve(__dirname, "./images");
