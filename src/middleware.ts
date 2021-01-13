@@ -2,7 +2,7 @@ import fs from "fs";
 import { Request, Response, NextFunction, RequestHandler } from "express";
 
 import {
-    DEFAULT_IMAGE,
+  DEFAULT_IMAGE,
   DEFAULT_HEIGHT,
   DEFAULT_WIDTH,
   MAX_HEIGHT,
@@ -10,9 +10,7 @@ import {
   IMAGES,
 } from "./constants";
 
-import {getFullFilePath} from "./utils";
-
-
+import { getFullFilePath } from "./utils";
 
 export const validateParams: RequestHandler = (
   req: Request,
@@ -56,7 +54,7 @@ export const getImageQuery: RequestHandler = (
   }
 
   if (!imageRequested) {
-      // Set the default image here if no image is specifically request
+    // Set the default image here if no image is specifically request
     req.query.image = DEFAULT_IMAGE;
   }
   next();
@@ -71,7 +69,7 @@ export const findImage: RequestHandler = (
 ) => {
   const imageRequested = "" + req.query.image;
   const { height, width } = req.params;
-  const imageFile = getFullFilePath(imageRequested, height, width)
+  const imageFile = getFullFilePath(imageRequested, height, width);
 
   fs.access(imageFile, (err) => {
     if (err) {
@@ -83,4 +81,3 @@ export const findImage: RequestHandler = (
     }
   });
 };
-
